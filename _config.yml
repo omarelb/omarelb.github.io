@@ -23,7 +23,7 @@ description              : "A blog with topics on Artificial Intelligence."
 url                      : "https://omarelb.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "omarelb/omarelb.github.io"
-teaser                   : "brain-scans-combined_invert.jpg"
+teaser                   : "/assets/images/brain-scans-combined_invert.jpg"
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
 comments:
@@ -289,5 +289,14 @@ defaults:
       comments: true
       share: true
       related: true
-      toc: # true
+      toc: false
+      # classes: wide
+# _pages
+  - scope:
+      path: "_pages"
+      type: pages
+    values:
+      layout: single
+      author_profile: false
+      toc: false
       classes: wide
