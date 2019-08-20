@@ -27,9 +27,9 @@ teaser                   : "/assets/images/brain-scans-combined_invert.jpg"
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
 comments:
-  provider               : staticman_v2 # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman", "staticman_v2" "custom"
+  provider               : disqus # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman", "staticman_v2" "custom"
   disqus:
-    shortname            : # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
+    shortname            : omarelb # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
   discourse:
     server               : # https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 , e.g.: meta.discourse.org
   facebook:
@@ -102,14 +102,14 @@ analytics:
 # Site Author
 author:
   name             : "Omar Elbaghdadi"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "/assets/images/bio-photo.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "AI enthusiast."
-  location         : "The Netherlands"
-  email            : "omarelb@gmail.com"
+  location         : "Amsterdam, The Netherlands"
+  email            : "omarelblog@gmail.com"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      # url: mailto:your.name@email.com
+      url: mailto:omarelblog@gmail.com
     - label: "Website"
       icon: "fas fa-fw fa-link"
       # url: "https://your-website.com"
@@ -179,6 +179,8 @@ exclude:
   - tmp
   - /docs # ignore Minimal Mistakes /docs
   - /test # ignore Minimal Mistakes /test
+  - /code/
+  - /_jupyter/
 keep_files:
   - .git
   - .svn
@@ -290,6 +292,7 @@ defaults:
       share: true
       related: true
       toc: false
+      subscribe_email: true
       # classes: wide
 # _pages
   - scope:

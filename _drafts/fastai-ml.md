@@ -6,12 +6,13 @@ header:
     caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
 ---
 
-> Follow this course and become a data scientist in one week!
-
-There's a good chance you've seen a claim like the above in an ad. The hype is real. Data science and machine learning have become very popular terms, and *data scientist* has been coined the [sexiest job of the 21st century](https://hbr.org/2012/10/data-scientist-the-sexiest-job-of-the-21st-century).
-
-
+<!-- > Follow this bootcamp now and become a data scientist!
 So goes the data science course ad I see 
+
+There's a good chance you've seen a claim like the above in an ad. The hype is real. Data science and machine learning have become very popular terms, and *data scientist* has been coined the [sexiest job of the 21st century](https://hbr.org/2012/10/data-scientist-the-sexiest-job-of-the-21st-century).  -->
+
+
+
 
 structure
 
