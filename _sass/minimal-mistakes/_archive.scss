@@ -141,8 +141,8 @@
     font-size: 0.6em;
   }
 
-  #list__wrapper {
-    overflow: hidden;
+  #list__item-wrapper {
+    // overflow: hidden;
     padding-top: 20px;
 
     .page__date {
@@ -150,15 +150,24 @@
     }
   }
 
-  #list__teaser {
+  #list__item-teaser {
     float: left;
+    width: 40%;
   }
 
-  // #list__blurb {
-  //   // overflow: hidden;
-  //   // padding-left: 0.5em
-  // }
+  #list__item-blurb {
+    float:left;
+    width: 60%;
+    // padding-left: 0.5em
+  }
 }
+
+@media screen and (max-width:500px) {
+  #list__item-teaser, #list__item-blurb {
+    width:100%;
+  }
+}
+
 
 .list__item-teaser {
   max-height: 500px;
