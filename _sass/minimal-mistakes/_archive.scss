@@ -142,7 +142,7 @@
   }
 
   #list__item-wrapper {
-    // overflow: hidden;
+    overflow: hidden;
     padding-top: 20px;
 
     .page__date {
@@ -150,12 +150,14 @@
     }
   }
 
-  #list__item-teaser {
+  .list__item-teaser {
     float: left;
     width: 40%;
+    max-height: 500px;
+    max-width: 300px;
   }
 
-  #list__item-blurb {
+  .list__item-blurb {
     float:left;
     width: 60%;
     // padding-left: 0.5em
@@ -163,15 +165,9 @@
 }
 
 @media screen and (max-width:500px) {
-  #list__item-teaser, #list__item-blurb {
-    width:100%;
+  .list__item-teaser, .list__item-blurb {
+    width:100% !important;
   }
-}
-
-
-.list__item-teaser {
-  max-height: 500px;
-  max-width: 300px;
 }
 
 /*

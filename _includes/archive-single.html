@@ -26,7 +26,7 @@
     {% endif %}
     <div id="list__item-wrapper">
       {% if include.type != "grid" and teaser %}
-        <div id="list__item-teaser">
+        <div class="list__item-teaser">
           {% capture excerpt_max_words %}50{% endcapture %}
           <a href="{{ post.link }}">
             <img src=
@@ -40,7 +40,7 @@
         </div>
       {% endif %}
       {% if include.type != "grid" and teaser %}
-        <div id="list__item-blurb">
+        <div class="list__item-blurb">
       {% endif %}
       <h2 class="archive__item-title" itemprop="headline">
         {% if post.link %}
