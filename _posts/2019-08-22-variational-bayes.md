@@ -198,7 +198,7 @@ $$
 
 Here we use Bayes' theorem to substite out $$p(\theta\vert y)$$ in the second line. Then, we use the property of logarithms $$\log(ab) = \log(a) + \log(b)$$, together with the fact that $$p(y)$$ doesn't depend on $$\theta$$, and that $$\int q(\theta) d\theta = 1$$ since $$q(\theta)$$ is a probability distribution over $$\theta$$, to arrive at the result. Phew, that was a whole mouthful.
 
-Since $$p(y)$$ is fixed, we only need to consider the second term, which has a name: the **Evidence Lower Bound (ELBO)**. We can see from the last equation why it is called this way. $$KL(q\ \vert\vert\ p) \geq 0 \Rightarrow \log p(y) \geq \text{ ELBO}$$. It is a lower bound on the log evidence $$\log p(y)$$.
+Since $$p(y)$$ is fixed, we only need to consider the second term, which has a name: the **Evidence Lower Bound (ELBO)**. We can see from the last equation why it is called this way. $$KL(q\ \vert\vert\ p) \geq 0$$ implies $$\log p(y) \geq \text{ ELBO}$$. It is thus a lower bound on the log evidence $$\log p(y)$$.
 
 To minimize KL-divergence, we thus need to maximize the ELBO. **The ELBO depends on $$p$$ only through the likelihood and prior, which we already know!** This is something we can actually compute without having to know the real distribution!
 
