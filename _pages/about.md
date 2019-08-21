@@ -2,7 +2,7 @@
 title: About
 permalink: /about/
 layout: single
-author_profile: false
+author_profile: true
 header:
   image: /assets/images/books.jpg
 
@@ -11,4 +11,8 @@ Hi there! First off, thanks for visiting my blog! In this blog, I hope to share 
 
 # Me
 
-My name's Omar Elbaghdadi. This year (2018), I finished by bachelor's degree in *Econometrics and Operations Research*, and I would like to do my master's in AI starting next year. My other interests include dancing, music, and traveling! Right now I'm saving up to go on a trip through South America.
+My name's Omar Elbaghdadi. Currently, I am pursuing a master's degree in Artificial Intelligence (AI) at the University of Amsterdam. I have a background in *Econometrics and Operations Research*, which I have a bachelor's degree in.
+
+My main interest of subjects within AI are Bayesian methods and Reinforcement Learning. I'm just starting out blogging, but I'd like to write more about these topics.
+
+Besides AI, I'm passionate about dancing salsa, music, cooking, and traveling! I have lived in Beijing for half a year and have also backpacked through South America!

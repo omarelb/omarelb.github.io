@@ -104,12 +104,12 @@ author:
   name             : "Omar Elbaghdadi"
   avatar           : "/assets/images/bio-photo.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "AI enthusiast."
-  location         : "Amsterdam, The Netherlands"
+  location         : "Amsterdam"
   email            : "omarelblog@gmail.com"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      url: mailto:omarelblog@gmail.com
+      # url: mailto:omarelblog@gmail.com
     - label: "Website"
       icon: "fas fa-fw fa-link"
       # url: "https://your-website.com"
@@ -230,6 +230,7 @@ plugins:
   - jemoji
   - jekyll-include-cache
   - jekyll-remote-theme
+  - jekyll-responsive-image
 
 # mimic GitHub Pages with --safe
 whitelist:

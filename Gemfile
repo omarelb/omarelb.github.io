@@ -25,4 +25,5 @@ gem "jekyll-gist"
 gem "jekyll-feed"
 gem "jemoji"
 gem "jekyll-include-cache"
+gem "jekyll-responsive-image"
 #   gem 

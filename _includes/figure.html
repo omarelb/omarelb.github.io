@@ -1,0 +1,14 @@
+<div class="figure">
+    <figure>
+        {% if include.href %}
+        <a href="{{ include.href }}">
+            <img src="{{ include.src }}" alt="image" class="align-center" style="width:{{ include.width }};align:center">
+        </a>
+        {% else %}
+        <img class="align-center" src="{{ include.src }}" alt="image" style="width:{{ include.width }}; align:center;margin-bottom: 0.4em;">
+        {% endif %}
+    {% if include.caption %}
+        <figcaption class="align-center">{{ include.caption }}</figcaption>
+    {% endif %}
+</figure>
+</div>

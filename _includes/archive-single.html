@@ -13,6 +13,7 @@
 <div class="{{ include.type | default: "list" }}__item">
   <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
     {% if include.type == "grid" and teaser %}
+      {% capture excerpt_max_words %}25{% endcapture %}
       <div class="archive__item-teaser">
         <img src=
           {% if teaser contains "://" %}
@@ -23,29 +24,40 @@
           alt="">
       </div>
     {% endif %}
-    {% if include.type != "grid" and teaser %}
-       <div class="list__item-teaser">
-         <a href="{{ post.link }}">
-           <img src=
-           {% if teaser contains "://" %}
-           "{{ teaser }}"
-           {% else %}
-           "{{ teaser | relative_url }}"
-           {% endif %}
-           alt="">
-          </a>
-        </div> 
-    {% endif %}
-    <h2 class="archive__item-title" itemprop="headline">
-      {% if post.link %}
-        <a href="{{ post.link }}">{{ title }}</a> <a href="{{ post.url | relative_url }}" rel="permalink"><i class="fas fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
-      {% else %}
-        <a href="{{ post.url | relative_url }}" rel="permalink">{{ title }}</a>
+    <div id="list__wrapper">
+      {% if include.type != "grid" and teaser %}
+        <div id="list__teaser">
+          {% capture excerpt_max_words %}50{% endcapture %}
+          <div class="list__item-teaser">
+            <a href="{{ post.link }}">
+              <img src=
+              {% if teaser contains "://" %}
+              "{{ teaser }}"
+              {% else %}
+              "{{ teaser | relative_url }}"
+              {% endif %}
+              alt="">
+            </a>
+          </div>
+        </div>
       {% endif %}
-    </h2>
-    {% if post.read_time %}
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> {% include read-time.html %}</p>
-    {% endif %}
-    {% if post.excerpt %}<p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify | strip_html | truncate: 160 }}</p>{% endif %}
+      {% if include.type != "grid" and teaser %} <div id="list__blurb"> {% endif %}
+      <h2 class="archive__item-title" itemprop="headline">
+        {% if post.link %}
+          <a href="{{ post.link }}">{{ title }}</a> <a href="{{ post.url | relative_url }}" rel="permalink"><i class="fas fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
+        {% else %}
+          <a href="{{ post.url | relative_url }}" rel="permalink">{{ title }}</a>
+        {% endif %}
+      {% if post.date %}
+      <!-- <h3 class="page__date"></h3> -->
+      <p class="page__date">On <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time></p>
+      {% endif %}
+      </h2>
+      <!-- {% if post.read_time %}
+        <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> {% include read-time.html %}</p> -->
+      {% endif %}
+      {% if post.excerpt %}<p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify | strip_html | truncatewords: excerpt_max_words }}</p>{% endif %}
+      {% if include.type != "grid" and teaser %} </div> {% endif %}
+    </div>
   </article>
 </div>
