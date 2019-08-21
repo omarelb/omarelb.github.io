@@ -6,6 +6,7 @@ img_dir: "/assets/images/posts/2019/variational-bayes/"
 subscribe_email: true
 header:
   teaser: "/assets/images/posts/2019/variational-bayes/teaser.png"
+  og_image: "/assets/images/posts/2019/variational-bayes/teaser.png"
 toc: true
 toc_sticky: false
 ---
