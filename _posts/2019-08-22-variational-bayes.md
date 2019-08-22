@@ -58,7 +58,7 @@ The frequentist and Bayesian paradigms both have their pros and cons, but there 
 
 The debate between frequentists and Bayesians about which is better can get quite intense. I personally believe that no single point of view is better in any situation. We need to think carefully and apply the method that is most appropriate for a given situation, be it frequentist or Bayesian. One infamous [xkcd](https://www.xkcd.com/) comic, given below, addresses this debate.
 
-{% capture newpath %} https://imgs.xkcd.com/comics/frequentists_vs_bayesians.png {% endcapture %} 
+{% capture newpath %}{{ page.img_dir }}{{ "frequentists-vs-bayesians.png" }}{% endcapture %} 
 {% capture caption %}
 xkcd comic on frequentist vs Bayesian views. The comic was quite controversial itself. Many thought that the frequentist was treated unfairly. The artist himself <a href="http://web.archive.org/web/20130117080920/http://andrewgelman.com/2012/11/16808/#comment-109366">later commented</a>:
 <blockquote>
@@ -170,7 +170,7 @@ Loosely speaking, KL-divergence can be interpreted as **the amount of informatio
 
   In practical applications, the true posterior will often be a multimodal distribution. Minimizing KL-divergence leads to **mode-seeking** behavior, which means that most probability mass of the approximating distribution $$q$$ **is centered around a mode of $$p$$**. Minimizing reverse KL-divergence leads to **mean-seeking** behavior, which means that $$q$$ would **average across all of the modes**. This would typically lead to poor predictive performance, since the average of two good parameter values is usually not a good parameter value itself. This is illustrated in the following figure.
 
-{% capture newpath %} http://timvieira.github.io/blog/images/KL-inclusive-exclusive.png {% endcapture %} 
+{% capture newpath %}{{ page.img_dir }}{{ "KL-inclusive-exclusive.png" }}{% endcapture %} 
 {% capture caption %}
 Minimizing \(KL(q\ \vert\vert\ p)\) versus \(KL(p\ \vert\vert\ q)\). The first (exclusive) leads to mode-seeking behavior, while the latter (inclusive) leads to mean-seeking behavior. (Source <a href="https://timvieira.github.io/blog/post/2014/10/06/kl-divergence-as-an-objective-function">Tim Vieira's blog</a>, figure by <a href="http://www.johnwinn.org/">John Winn</a>.)
 {% endcapture %} 
