@@ -527,10 +527,12 @@ p.page__date {
 /*
   Mathjax
   =========================================================================== */
-.MathJax,
-.MathJax_Display {
-  overflow-x: auto;
-  overflow-y: hidden;
-  // padding-bottom: 250px; 
-  // margin-bottom: -250px;
+@media screen and (max-width:500px) {
+  .MathJax,
+  .MathJax_Display {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    // padding-bottom: 250px; 
+    // margin-bottom: -250px;
+  }
 }
