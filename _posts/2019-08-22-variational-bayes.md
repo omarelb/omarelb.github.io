@@ -1,14 +1,10 @@
 ---
 title: "Variational Bayesian Inference: A Fast Bayesian Take on Big Data."
-author_profile: true
-excerpt_separator: <!--more-->
 img_dir: "/assets/images/posts/2019/variational-bayes/"
-subscribe_email: true
 header:
   teaser: "/assets/images/posts/2019/variational-bayes/teaser.png"
   og_image: "/assets/images/posts/2019/variational-bayes/teaser.png"
 toc: true
-toc_sticky: false
 ---
 
 Compared to the frequentist paradigm, [Bayesian inference](https://en.wikipedia.org/wiki/Bayesian_inference) allows more readily for dealing with and interpreting uncertainty, and for easier incorporation of prior beliefs.
@@ -39,7 +35,7 @@ Probability theory is a mathematical framework for reasoning about **uncertainty
 
 **Inference** is the process of finding properties of a population or probability distribution from data. Most of the time, these properties are encoded by **parameters** that govern our model of the world.
 
-In the frequentist paradigm, a parameter is assumed to be a fixed quantity, existing somewhere out there in the world. Then, a method such as **maximum likelihood (ML)** is used to obtain a **point estimate** (a single number) of the parameter. In the Bayesian paradigm, parameters are not seen as fixed quantities, but as random variables themselves. The **uncertainty in the parameters** is then specified by a **probability distribution** over its values. Our job is to find this probability distribution over parameters **given our data and prior beliefs.**
+In the frequentist paradigm, a parameter is assumed to be a fixed quantity unknown to us. Then, a method such as **maximum likelihood (ML)** is used to obtain a **point estimate** (a single number) of the parameter. In the Bayesian paradigm, parameters are not seen as fixed quantities, but as random variables themselves. The **uncertainty in the parameters** is then specified by a **probability distribution** over its values. Our job is to find this probability distribution over parameters **given our data and prior beliefs.**
 
 The frequentist and Bayesian paradigms both have their pros and cons, but there are multiple reasons why we might want to use a Bayesian approach. The following reasons are given in a [Quora answer by Peadar Coyle](https://www.quora.com/What-are-some-good-resources-to-learn-about-Bayesian-probability-for-machine-learning-and-how-should-I-structure-my-learning). To summarize:
 
