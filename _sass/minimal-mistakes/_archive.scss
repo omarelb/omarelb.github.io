@@ -142,7 +142,7 @@
   }
 
   #list__item-wrapper {
-    overflow: hidden;
+    // overflow: hidden;
     padding-top: 20px;
 
     .page__date {
@@ -246,7 +246,7 @@
   }
 
   .archive__item-excerpt {
-    display: none;
+    display: block; // changed from none to block: want to show excerpt for small screen too
 
     @include breakpoint($medium) {
       display: block;
