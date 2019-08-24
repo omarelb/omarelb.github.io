@@ -29,6 +29,13 @@ The post is outlined as follows:
 - When can we trust our method
 - Conclusion
 
+### A bird's-eye view:
+
+We need Bayesian inference whenever we want to know the **uncertainty of our estimates**. We need **approximate algorithms** because standard algorithms need too much time to give usable estimates. Bayesian inference works by specifying some **prior belief distribution**, and **updating our beliefs** about that distribution with data, based on the **likelihood** of observing that data. **Varational inference** uses **optimization** instead of estimation to **approximate** the true distribution. We get results **much more quickly**, but they are **not always correct**. We have to find out **when we can trust the obtained results**.
+
+A note on notation: $$P(\cdot)$$ is used to describe both probabilities and probability distributions. 
+{: .notice--info}
+
 # What is Bayesian inference and why do we use it in the first place
 
 Probability theory is a mathematical framework for reasoning about **uncertainty**. Within the subject exist two major schools of thought, or paradigms: the **frequentist** and the **Bayesian** paradigms. In the frequentist paradigm, probabilities are interpreted as average outcomes of random repeatable events, while the Bayesian paradigm provides a way to reason about probability as **a measure of uncertainty**.
@@ -103,7 +110,7 @@ In words, the posterior is given by a product of the **likelihood** $$P(y_{1:n} 
 {% capture caption %} Sketch of the Bayesian update. The posterior (blue) is obtained after multiplying the prior (red) with the likelihood (black). In a sequential estimation procedure, the new prior is the posterior obtained in the previous step. {% endcapture %} 
 {% include figure.html src=newpath caption=caption %}
 
-The likelihood is often seen as a function of $$\theta$$, and tells us how likely it is to have observed our data given a specific setting of the parameters. **The prior encapsulates beliefs** we have about the parameters before observing any data.
+The likelihood $$P(y_{1:n} \vert\theta)$$ is often seen as a function of $$\theta$$, and tells us how likely it is to have observed our data given a specific setting of the parameters. **The prior $$P(\theta)$$ encapsulates beliefs** we have about the parameters before observing any data. **We update our beliefs about the parameter distribution after observing data** according to Bayes' rule.
 
 After obtaining the posterior distribution, **we would like to report a summary** of it. We usually do this by providing a **point estimate and an uncertainty** surrounding the estimate. A point estimate may for example be given by the **posterior mean or mode**, and uncertainty by the **posterior (co)variances**.
 
@@ -218,7 +225,7 @@ Now that we have defined a space and metric to optimize over, **we have a clearl
 
 Since Variational Inference is an approximate method, we'd like to know **how accurate** the approximation actually is. In other words, when we can trust it. If we schedule an ambulance based on the prediction that it will take 10 minutes to arrive, we have to be damn sure that our **confidence in the prediction is justified**.
 
-One way to check whether the method works is to consider a simple example that we know the correct answer to. We can then see how well MFVB approximates that answer. To do this, we consider the problem of estimating midge wing length. 
+One way to check whether the method works is to consider a simple example that we know the correct answer to. We can then see how well MFVB approximates that answer. To do this, we consider the (rather randomly chosen) problem of estimating midge wing length. 
 
 ## Estimating midge wing length
 
