@@ -18,6 +18,7 @@ minimal_mistakes_skin    : "contrast" # "default", "air", "aqua", "contrast", "d
 locale                   : "en-US"
 title                    : "Omar's Blog"
 title_separator          : "-"
+subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Omar Elbaghdadi"
 description              : "A blog with topics on Artificial Intelligence."
 url                      : "https://omarelb.github.io"
@@ -39,9 +40,12 @@ comments:
     appid                :
     num_posts            : # 5 (default)
     colorscheme          : # "light" (default), "dark"
+  utterances:
+    theme                : # "github-light" (default), "github-dark"
+    issue_term           : # "pathname" (default)
 staticman:
   allowedFields          : # ['name', 'email', 'url', 'message']
-  branch                 : "master"
+  branch                 : # "master"
   commitMessage          : # "New comment by {fields.name}"
   filename               : # comment-{@timestamp}
   format                 : # "yml"
@@ -229,7 +233,6 @@ plugins:
   - jekyll-sitemap
   - jekyll-gist
   - jekyll-feed
-  - jemoji
   - jekyll-include-cache
   - jekyll-remote-theme
   - jekyll-responsive-image
@@ -240,7 +243,6 @@ whitelist:
   - jekyll-sitemap
   - jekyll-gist
   - jekyll-feed
-  - jemoji
   - jekyll-include-cache
 
 
