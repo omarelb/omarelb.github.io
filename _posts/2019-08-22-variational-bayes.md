@@ -162,7 +162,7 @@ $$
 - If **$$p$$** is **high** and **$$q$$** is **low** then we **pay a price** i.e.  high KL-divergence.
 - If **$$p$$** is **low** then **we don't care** i.e.  also low KL-divergence, **regardless of $$q$$**.
 
-The following figure illustrates KL-divergence for two normal distributions $$\pi_1$$ and $$\pi_2$$. A couple of things to note: divergence is indeed high when $$p$$ is high and $$q$$ is low, and low when the opposite happens; divergence is 0 when $$p = q$$; and the complete KL-divergence is given by the area under the green curve.
+The following figure illustrates KL-divergence for two normal distributions $$\pi_1$$ and $$\pi_2$$. A couple of things to note: divergence is indeed high when $$p$$ is high and $$q$$ is low; divergence is 0 when $$p = q$$; and the complete KL-divergence is given by the area under the green curve.
 
 {% capture newpath %}{{ page.img_dir }}{{ "KL-example.png" }}{% endcapture %} 
 {% capture caption %} 
