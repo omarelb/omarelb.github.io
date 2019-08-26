@@ -26,7 +26,7 @@ baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "omarelb/omarelb.github.io"
 teaser                   : "/assets/images/brain-scans-combined_invert.jpg"
 logo                     : "assets/images/logo.png"
-# masthead_title           : "custom title"
+masthead_title           : "Omar's Blog"
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
 comments:

@@ -7,7 +7,7 @@ header:
   image: /assets/images/books.jpg
 
 ---
-Hi there! First off, thanks for visiting my blog! In this blog, I hope to share exciting things on **Artificial Intelligence** that I find interesting! My goal is to enhance my own and others' understanding on all kinds of topics. Please [contact](/contact/) me if you have any questions or suggestions!
+Hi there! First off, thanks for visiting my blog! In this blog, I hope to share exciting things on **Artificial Intelligence** that I find interesting! My goal is to enhance my own and others' understanding on all kinds of topics. Please [contact](mailto:omarelblog@gmail.com) me if you have any questions or suggestions!
 
 # Me
 

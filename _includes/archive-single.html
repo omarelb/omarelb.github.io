@@ -28,7 +28,7 @@
       {% if include.type != "grid" and teaser %}
         <div class="list__item-teaser">
           {% capture excerpt_max_words %}50{% endcapture %}
-          <a href="{{ post.link }}">
+          <a href="{{ post.url | relative_url }}" rel="permalink">
             <img src=
             {% if teaser contains "://" %}
             "{{ teaser }}"
