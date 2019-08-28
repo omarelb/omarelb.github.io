@@ -22,16 +22,15 @@ This write-up is mostly based on the first part of the [fantastic 2018 ICML tuto
 The post is outlined as follows:
 
 - What is Bayesian inference and why do we use it in the first place
-- Why do we need approximate algorithms
 - How Bayesian inference works—a quick overview
-- The problem, a solution, and a better solution
+- The problem, a solution, and a faster solution
 - Variational Inference and the Mean Field Variational Bayes (MFVB) framework
 - When can we trust our method
 - Conclusion
 
 ### A bird's-eye view:
 
-We need Bayesian inference whenever we want to know the **uncertainty of our estimates**. We need **approximate algorithms** because standard algorithms need too much time to give usable estimates. Bayesian inference works by specifying some **prior belief distribution**, and **updating our beliefs** about that distribution with data, based on the **likelihood** of observing that data. **Varational inference** uses **optimization** instead of estimation to **approximate** the true distribution. We get results **much more quickly**, but they are **not always correct**. We have to find out **when we can trust the obtained results**.
+We need Bayesian inference whenever we want to know the **uncertainty of our estimates**. Bayesian inference works by specifying some **prior belief distribution**, and **updating our beliefs** about that distribution with data, based on the **likelihood** of observing that data. We need **approximate algorithms** because standard algorithms need too much time to give usable estimates. **Variational inference** uses **optimization** instead of estimation to **approximate** the true distribution. We get results **much more quickly**, but they are **not always correct**. We have to find out **when we can trust the obtained results**.
 
 A note on notation: $$P(\cdot)$$ is used to describe both probabilities and probability distributions. 
 {: .notice--info}
