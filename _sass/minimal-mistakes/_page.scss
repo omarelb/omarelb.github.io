@@ -97,8 +97,11 @@ p.page__date {
   }
 
   a:not(.btn) {
+    color: #000;
     &:hover {
       text-decoration: underline;
+
+      color: rgba(0, 0, 0, 0.589);
 
       img {
         box-shadow: 0 0 10px rgba(#000, 0.25);
