@@ -1,7 +1,7 @@
 ---
 title: "Self-Explaining Neural Networks: A Review "
 img_dir: "/assets/images/posts/2020/self-explaining-neural-networks/"
-headere
+header:
   teaser: "/assets/images/posts/2020/self-explaining-neural-networks/teaser.png"
   og_image: "/assets/images/posts/2020/self-explaining-neural-networks/teaser.png"
 toc: true
