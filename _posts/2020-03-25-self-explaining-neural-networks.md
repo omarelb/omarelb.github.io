@@ -8,12 +8,12 @@ toc: true
 read_time: false
 ---
 
-For many applications, understanding *why* a predictive model makes a certain prediction can be of crucial importance. In the paper ["Towards Robust Interpretability with Self-Explaining Neural Networks"](http://papers.nips.cc/paper/8003-towards-robust-interpretability-with-self-explaining-neural-networks), David Alvarez-Melis and Tommi Jaakkola propose a neural network model that takes interpretability of predictions into account *by design*. In this post, we will look at how this model works, how reproducible the papers' results are, and how the framework can be extended.
+For many applications, understanding *why* a predictive model makes a certain prediction can be of crucial importance. In the paper ["Towards Robust Interpretability with Self-Explaining Neural Networks"](http://papers.nips.cc/paper/8003-towards-robust-interpretability-with-self-explaining-neural-networks), David Alvarez-Melis and Tommi Jaakkola propose a neural network model that takes interpretability of predictions into account *by design*. In this post, we will look at how this model works, how reproducible the paper's results are, and how the framework can be extended.
 
 <!--more-->
 
 First, a bit of context. This blog post is a by-product of a student project that was
-done with a group of 4 AI grad students: [Aman Hussain](https://github.com/AmanDaVinci), [Chris Hoenes](https://github.com/ChristophHoenes), [Ivan Bardarov](https://github.com/VaniOFX), and me. The goal of
+done with a group of 4 AI grad students: [Aman Hussain](https://github.com/AmanDaVinci), [Chris Hoenes](https://github.com/ChristophHoenes), [Ivan Bardarov](https://www.linkedin.com/in/ivan-bardarov/), and me. The goal of
 the project was to find out how reproducible the results of the paper are. To
 do this, we re-implemented the framework from scratch. We have released this
 implementation as a package [here](https://github.com/AmanDaVinci/SENN). In
@@ -25,15 +25,13 @@ we care about explaining our predictions in the first place.
 
 ## Transparency in AI ##
 
-A judge decides whether an incarcerated convict is kept locked up or freed to join society again. A banker decides whether someone applying for a loan gets that loan. A radiologist decides whether a blob on a CT-scan is a malignant tumor or not. These decisions have an extensive impact on peoples’ lives, and are taken on a societal scale. Traditionally, such critical decisions have been taken by humans. Yet, these decisions are increasingly taken by machine learning (ML) algorithms.
+As ML systems become more omnipresent in societal applications such as banking and healthcare, it's crucial that they should satisfy some important criteria such as safety, not discriminating against certain groups, and being able to provide the right to explanation of algorithmic decisions. The last criterion is enforced by data policies such as the [GDPR](https://en.wikipedia.org/wiki/General_Data_Protection_Regulation), which say that people subject to the decisions of algorithms have a right to explanations of these algorithms.
 
-As ML systems become more omnipresent in societal applications, it's crucial that they should satisfy some important criteria such as safety, not discriminating against certain groups, and being able to provide the right to explanation of algorithmic decisions. The last criterion is enforced by data policies such as the [GDPR](https://en.wikipedia.org/wiki/General_Data_Protection_Regulation), which stipulate that people subject to the decisions of algorithms have a right to explanations of these algorithms.
+These criteria are often hard to quantify. Instead, a proxy notion is regularly made use of: *interpretability*. The idea is that if we can explain *why* a model is making the predictions it does, we can check whether that reasoning is *reliable*. Currently, there is not much agreement on what the definition of interpretability should be or how to evaluate it.
 
-These criteria are often hard to quantify. Instead, a proxy notion is regularly made use of: *interpretability*. The idea is that if we can explain the inner workings of a model, i.e. why it makes the predictions it does, then we can check whether that reasoning is **reliable**. Currently, there is no complete consensus on the definition of interpretability or how to evaluate it.
+Much recent work has focused on interpretability methods that try to understand a model’s inner workings **after** it has been trained. Well known examples are [LIME](https://github.com/marcotcr/lime) and [SHAP](https://github.com/slundberg/shap). Most of these methods make no assumptions about the model to be explained, and instead treat them like a black box.
 
-Much recent work has focused on **post-hoc** interpretability methods, which try to understand a model’s inner workings **after** it has been trained. Well known examples are [LIME](http://www.url.com) and [SHAP](http://www.url.com). Most of these methods make no assumptions about the model to be explained, and instead treat them like a black box.
-
-Another approach taken towards attaining model transparency is to formulate a framework of models that are transparent **by design**. This approach is also taken by Alvarez-Melis and Jaakkola, who I will be referring to as ''the authors'' from now on. They propose a self-explaining neural network (SENN) that optimises for transparency **during the learning process**, (hopefully) without sacrificing too much modeling power. 
+Another approach is to design models that are transparent **by design**. This approach is also taken by Alvarez-Melis and Jaakkola, who I will be referring to as ''the authors'' from now on. They propose a self-explaining neural network (SENN) that optimises for transparency **during the learning process**, (hopefully) without sacrificing too much modeling power. 
 
 ## Self Explaining Neural Networks (SENN)
 
@@ -92,7 +90,7 @@ global orientation, position, roundness, and so on.
 
 ![concepts]({{page.img_dir}}concepts.png "opt title")
 
-Concepts like this could be generated by domain experts, but this is expensive and in many cases infeasible. An alternative approach is to [learn the concepts directly](https://arxiv.org/abs/1711.11279).  It cannot be stressed enough that *the interpretability of the whole framework depends on how interpretable the concepts are*. Therefore, the authors propose **three properties concepts should have and how to enforce them**:
+Concepts like this could be generated by domain experts, but this is expensive and in many cases infeasible. An alternative approach is to [learn the concepts directly](https://arxiv.org/abs/1711.11279).  It cannot be stressed enough that *the interpretability of the whole framework depends on how interpretable the concepts are*. Therefore, the authors propose **three properties concepts should have** and how to enforce them:
 1. *Fidelity*: The representation of $$x$$ in terms of concepts should **preserve relevant information**.
 
     This is enforced by learning the concepts $$h(x)$$ as the latent encoding of an [autoencoder](https://www.jeremyjordan.me/autoencoders/). An autoencoder is a neural network that learns to map an input $$x$$ to itself by first encoding it into a **lower dimensional representation** with an encoder network $$h$$ and then creating a reconstruction $$\hat{x}$$ with a decoder network $$h_\mathrm{dec}$$, i.e. $$\hat{x} = h_\mathrm{dec}(h(x))$$. The lower dimensional representation $$h(x)$$, which we call its *latent representation*, is a vector in a space we call the latent space. **It therefore needs to capture the most important information contained in $$x$$**. This can be thought of as a nonlinear version of [PCA](http://setosa.io/ev/principal-component-analysis/).
@@ -183,15 +181,10 @@ where
 
 ## Reproducibility ##
 
-There is a widespread belief that reproducibility of research is one of the key features of
-science that distinguishes it from non-science. According to the Open Science
-Collaboration, *"Reproducible research practices are at the heart of sound
-research and integral to the scientific method."* If
-it is impossible to reproduce a paper's results, it is hard to
+If it is impossible to reproduce a paper's results, it is hard to
 verify the validity of the obtained results. Even if the results are valid, it
-will be hard to build upon that work.
-
-This has recently been an important topic in AI research as well, and there
+will be hard to build upon that work. Reproducibility has therefore recently been an
+important topic in many scientific disciplines. In AI research, there
 have been initiatives to move towards more reproducible research. NeurIPS, one of the
 biggest conferences in AI, introduced a [reproducibility
 checklist](https://www.cs.mcgill.ca/~jpineau/ReproducibilityChecklist.pdf) last
@@ -227,17 +220,10 @@ good explanations is, in that sense, not reproducible.
 
 How do we interpret this failure to reproduce? Although it is tempting to
 say that the initial results are invalid, this might be too harsh and
-unfair. It could be that the results produced by our replication study did not
-represent a proper replication. For example, we had to guess some
-hyperparameter values that were left unspecified by the authors.
-While we believe these hyperparameters should not have a large impact, this might still
-be the case.
-
-Even though we can't draw strong conclusions, our results are still
-informative. We can think about it from a Bayesian point of view, in which we
-have a prior belief (that the produced research is valid), and new
-evidence (our results) that changes that belief. We might now be a bit less certain that
-the produced research is valid. Even if this is the case, the authors provide
+unfair. There are many factors that influence an experiment's results.
+Although our results are discouraging, more experiments 
+need to be done to have a better estimate of the validity of the framework.
+Even if this is the case, the authors provide
 a useful starting point for further research. We take a first step, which
 involves improving the learned concepts.
 
