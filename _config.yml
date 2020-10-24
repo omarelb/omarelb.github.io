@@ -111,7 +111,7 @@ author:
   avatar           : "/assets/images/bio-photo.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "AI enthusiast."
   location         : "Amsterdam"
-  email            : "omarelblog@gmail.com"
+  email            : "omarelb[at]gmail[dot]com"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
